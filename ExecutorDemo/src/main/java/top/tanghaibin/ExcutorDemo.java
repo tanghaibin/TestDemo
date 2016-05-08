@@ -88,10 +88,9 @@ class TestOutput {
         public MyCallable(File file) {
             this.file = file;
         }
-        @Override
         public Runnable call() throws Exception {
             Runnable runnable =  new Runnable() {
-                @Override
+
                 public void run() {
                     try {
                         OutputStream outputStream = new FileOutputStream(new File("E:/testexecutor/" + UUID.randomUUID() + ".jpg"));
