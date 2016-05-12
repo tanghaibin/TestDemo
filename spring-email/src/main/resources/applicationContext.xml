@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+       <bean class="org.springframework.mail.SimpleMailMessage">
+              <property name="from" value="*****"></property>
+              <property name="to" value="*****"></property>
+              <property name="subject" value="注册邮件"></property>
+              <property name="text" value="register...."></property>
+       </bean>
+
+       <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+              <property name="host" value="SMTP.163.com"></property>
+              <property name="username" value="******"></property>
+              <property name="password" value="*******"></property>
+       </bean>
+</beans>
