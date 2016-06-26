@@ -5,6 +5,9 @@ import top.tanhgaibin.proxy.service.UserService;
 import top.top.tanghaibin.proxy.MyHandler;
 
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by tangh on 2016/5/4.
@@ -27,6 +30,7 @@ public class Main {
         userService.login("tanghaibin","123");
     System.out.println(fun(3));
     System.out.println(fun2(3));
+    System.out.println(testArrayList());
     }
 
    public static int fun(int n){
@@ -46,6 +50,18 @@ public class Main {
         }
 
         return count;
+    }
+
+
+    public static List testArrayList(){
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("b");
+        List<String> list2 = new ArrayList<String>();
+        list2.add("b");
+        //list.removeAll(list2);
+        return list;
     }
 
 }
