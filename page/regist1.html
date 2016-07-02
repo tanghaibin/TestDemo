@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>手机注册</title>
+    <script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
 </head>
 <body>
 
@@ -12,7 +13,7 @@
 
     <div id="regist-process-div">
         <div>
-            <img src="image/regist.png"/>
+            <img src="image/12.png"/>
         </div>
         <div id="regist-process-a-div">
             <label>已有账号？<a href="#">立即登录</a></label>
@@ -38,7 +39,7 @@
         </div>
         
         <div id="right-img-div">
-            <img src=""/>
+            <img src="image/6.png"/>
         </div>
     </div>
 
@@ -87,7 +88,6 @@
         float: left;
         position: relative;
         margin-left: 10%;
-
     }
     #regist-process-a-div{
         position: relative;
@@ -117,6 +117,7 @@
         font-size: 13px;
         padding-top: 4px;
         cursor: pointer;
+        transition: background-color 0.5s ease-in;
     }
     #geren-user{
         background-color: #FF8812;
@@ -158,7 +159,7 @@
     }
     #next-btn{
         position: relative;
-        background-color: #FF8812;
+        background-color: #dddddd;
         width: 48%;
         height:30px;
         margin-left:20%;
@@ -167,12 +168,16 @@
         padding-top: 2%;
         color: white;
         cursor: pointer;
+        transition: background-color 0.5s ease-in;
+    }
+    #next-btn:hover{
+        background-color: #FF8812;
     }
     #right-img-div{
         position: relative;
         width: 500px;
         height:350px;
-        border:1px solid #E0E0E0;
+        /*border:1px solid #E0E0E0;*/
         float:right;
         margin-top:1%;
         right:13%;
@@ -198,7 +203,17 @@
     }
     #bottom-div-ul ul li a{
         color:#878787;
-
+        font-size:13px;
     }
 </style>
+
+<script type="text/javascript">
+    $(function(){
+        $(".user-type").click(function(){
+            var obj = $(this);
+            $(".user-type").css("background","#E0E0E0");
+            obj.css("background","#FF8812");
+        })
+    })
+</script>
 </html>

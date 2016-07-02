@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>个体用户注册</title>
+    <script src="jquery/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>姓名</label></div><input type="text"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name"> <label><span style="color: red">*</span>身份证号</label></div><input type="text"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>出生年月</label></div><input type="date"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>性别</label></div><input type="radio" name="sex" class="gender-radio"/>男&nbsp;&nbsp;&nbsp;&nbsp;<input class="gender-radio" name="sex" type="radio"/>女
+                </div>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>用户名</label></div><input type="text"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>密码</label></div><input type="text"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>确认密码</label></div><input type="text"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name"><label><span style="color: red">*</span>邮箱地址</label></div><input type="text"/>
+                </div>
+                <div class="input-div">
+                    <div class="title-name" id="agree-div"><label><span style="color: red"></span><input type="checkbox" id="agree-checkbox"/><label>我已阅读并同意<a href="#">《电商平台用户注册协议》</a></label></div>
+                </div>
+                <div id="regist-btn">注 册</div>
+
+</body>
+
+<style type="text/css">
+    #agree-checkbox{
+        width: 17px;
+        vertical-align:middle;
+    }
+    #agree-div{
+        /*border:1px solid red;*/
+        position: relative;
+        width: 80%;
+        font-size:12px;
+    }
+    body{
+        font-family: '微软雅黑';
+        overflow: scroll;
+    }
+    a{
+        text-decoration: none;
+        text-decoration-color: #5394D8;
+    }
+    #title-div{
+        position: relative;
+        width: 100%;
+        height: 12%;
+        background-color: #1C4875;
+    }
+    #title-div img{
+        position: relative;
+        left: 7%;
+        padding-top:0.5%;
+        padding-bottom: 0.5%;
+    }
+    #regist-process-div{
+        position: relative;
+        margin-top:2%;
+        overflow: hidden;
+        border-bottom-color: #E0E0E0;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+    }
+    #regist-process-div div{
+        float: left;
+        position: relative;
+        margin-left: 10%;
+    }
+    #regist-process-a-div{
+        position: relative;
+        margin-top: 1%;
+        margin-right: 10%;
+        font-size: 13px;
+    }
+    #regist-process-div img{
+        position: relative;
+        margin-bottom: 1%;
+    }
+    #regist-div{
+        position: relative;
+        width: 500px;
+        height:550px;
+        border:1px solid #E0E0E0;
+        left:10%;
+        margin-top:1%;
+        float: left;
+    }
+    .user-type{
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 25px;
+        text-align: center;
+        font-size: 13px;
+        padding-top: 4px;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in;
+    }
+    #geren-user{
+        background-color: #FF8812;
+    }
+    #qiye-user{
+        background-color: #E0E0E0;
+    }
+    #phone-div{
+        position: relative;
+        margin-left: 8%;
+        margin-top: 18%;
+    }
+
+    #getCode-btn{
+        border-radius: 0px;
+        background-color: #3A84CF;
+        color:white;
+        cursor: pointer;
+    }
+    #regist-btn{
+        position: relative;
+        background-color: #dddddd;
+        width: 48%;
+        height:30px;
+        margin-left:20%;
+        margin-top:10%;
+        text-align: center;
+        padding-top: 2%;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in;
+    }
+    #regist-btn:hover{
+        background-color: #FF8812;
+    }
+    #right-img-div{
+        position: relative;
+        width: 500px;
+        height:600px;
+        /*border:1px solid #E0E0E0;*/
+        float:right;
+        margin-top:1%;
+        right:13%;
+    }
+    #bottom-div{
+        position: relative;
+        width: 100%;
+        height: 220px;
+        background-color: #E0E0E0;
+        margin-top:45%;
+    }
+
+    #bottom-div-ul ul li{
+        list-style: none;
+        float: left;
+        margin-left: 10px;
+    }
+    #bottom-div-ul{
+        text-align: center;
+        margin-left: 38%;
+        padding-top: 10px;
+
+    }
+    #bottom-div-ul ul li a{
+        color:#878787;
+        font-size:13px;
+    }
+    input{
+        position: relative;
+        border-radius: 5px;
+        border-color:#A0A0A0;
+        width:55%;
+        height:30px;
+        border-width:1px;
+    }
+    .input-div{
+        position: relative;
+        margin-top:5px;
+        marigin-left:10px;
+        /*border:1px solid red;*/
+        width:80%;
+        padding-left:10px;
+    }
+    .title-name{
+        /*border:1px solid blue;*/
+        float:left;
+        position:relative;
+        width:20%;
+        text-align:right;
+        margin-left: 6%;
+        margin-right:3%;
+    }
+    #content-info-div{
+        position: relative;
+        margin-top:10%;
+    }
+    .gender-radio{
+        width: 15px;
+        margin-top:5px;
+        vertical-align:middle;
+    }
+</style>
+
+
+<script type="text/javascript">
+    $(function(){
+        $(".user-type").click(function(){
+            var obj = $(this);
+            $(".user-type").css("background","#E0E0E0");
+            obj.css("background","#FF8812");
+            if(obj.attr("id") == "qiye-user"){
+                $("#content-info-div").load("qiyeRegister.html");
+            }
+        })
+    });
+</script>
+</html>
