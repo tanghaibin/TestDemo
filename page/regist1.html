@@ -213,7 +213,24 @@
             var obj = $(this);
             $(".user-type").css("background","#E0E0E0");
             obj.css("background","#FF8812");
+        });
+
+        $("#getCode-btn").click(function(){
+            $("#getCode-btn").attr("disabled","true");
+            $("#getCode-btn").val("60s");
+            setInterval(setNumber , 1000);
         })
-    })
+    });
+
+    function setNumber(){
+        var num = $("#getCode-btn").val().split("s")[0];
+        if(num > 0){
+            $("#getCode-btn").val(num - 1 + "s");
+        }else{
+            clearInterval(setNumber);
+            $("#getCode-btn").val("获取短信验证码");
+            $("#getCode-btn").removeAttr("disabled");
+        }
+    }
 </script>
 </html>
