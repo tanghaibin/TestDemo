@@ -11,7 +11,8 @@
     <div id="x-div"><label>X</label></div>
 </div>
 <div id="video-div">
-    <video src="#" width="800px" height="600" controls poster=""></video>
+    <div id="video-info-div"><video src="#" width="800px" height="600" controls poster=""></video></div>
+    <div id="x-video-div"><label>X</label></div>
 </div>
     <div id="main-div">
         <p id="title">我的快乐农场</p>
@@ -136,7 +137,7 @@
     body{
         background-color:#F5F5F5;
         font-family: '微软雅黑';
-        overflow: scroll;
+        /*overflow: scroll;*/
     }
     #video-div{
         position: absolute;
@@ -433,6 +434,27 @@
     #x-div label{
         cursor: pointer;
     }
+
+    #video-info-div{
+        float: left;
+        /*margin-top:10%;*/
+        background-color: grey;
+        padding-right: 20px;
+    }
+    #video-div{
+        position: absolute;
+        width: 52%;
+        height: 610px;
+    }
+    #x-video-div{
+        float: right;
+    }
+    #x-video-div label{
+        cursor: pointer;
+    }
+    video{
+        vertical-align:middle;
+    }
 </style>
 
 <script type="text/javascript">
@@ -440,7 +462,6 @@
         $(".guicheng-item-div img").click(function(){
             var obj = $(this);
             $("#look-pic img").attr("src",obj.attr("src"));
-            console.log(obj.attr("src"));
             $("#look-pic").css("display","inline");
         });
         $("#x-div label").click(function(){
@@ -451,9 +472,10 @@
             $("#video-div video").attr("src",obj.attr("src"));
             $("#video-div").css("display","inline");
         });
-        $("#video-div video").click(function(){
+        $("#x-video-div").click(function(){
             $("#video-div").css("display","none");
-        })
+        });
+
     })
 </script>
 </html>
