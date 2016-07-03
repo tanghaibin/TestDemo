@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>我的快乐农场</title>
+    <script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
 </head>
 <body>
     <div id="main-div">
@@ -365,4 +366,14 @@
         margin:0 auto;
     }
 </style>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $(".tree-item-div").click(function(){
+            $("#main-center-div").load("myFarmTreeDetail.html");
+        })
+    })
+</script>
 </html>

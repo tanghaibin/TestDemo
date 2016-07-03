@@ -26,12 +26,16 @@
         <img src="image/9.png"/>
         <div id="menum-item-div">
             <div class="menum-item">首 页</div>
-            <div class="menum-item">订购专区</div>
+            <div class="menum-item" id="goods-prefecture">订购专区</div>
             <div class="menum-item">生产基地</div>
             <div class="menum-item">关于我们</div>
             <div class="menum-item" id="menum-item-img"><img src="image/10.png"/></div>
         </div>
     </div>
+
+
+    <div id="main-center-div"></div>
+    <div id="main-bottom-div"></div>
 </body>
 
 <style type="text/css">
@@ -101,15 +105,23 @@
         position: relative;
         margin-left:15%;
     }
+    #main-bottom-div{
+        overflow-x: hidden;
+    }
 </style>
 
 <script type="text/javascript">
+    $("#main-center-div").load("myFarm.html");
+    $("#main-bottom-div").load("bottom.html");
     $(function(){
         $(".menum-item").click(function(){
             var obj = $(this);
             $(".menum-item").css({"border-bottom-color":"#1C4875","color":"white"});
             obj.css({"color":"#FF8812","border-bottom-color":"#FF8812","border-bottom-style":"solid","border-bottom-width":"2px"});
-        })
+            if(obj.attr("id") == "goods-prefecture"){
+                window.location = "main.html";
+            }
+        });
     })
 </script>
 </html>
