@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div id="top-div">
+        <div id="top-div-left-div">
+            <a href="#">亲，请登录 </a><label>|</label>
+            <a href="#">免费注册</a>
+        </div>
+        <div id="top-div-right-div">
+            <a href="#">我的订单 </a><label>|</label>
+            <a href="#">我的果篮 </a><label>|</label>
+            <a href="#">收藏 </a><label>|</label>
+            <a href="#">我的快乐农场 </a><label>|</label>
+            <a href="#">生产基地 </a><label>|</label>
+            <a href="#">合作伙伴 </a><label>|</label>
+            <a href="#">联系客服 </a><label>|</label>
+            <a href="#">关于我们 </a>
+        </div>
+    </div>
+
+
+</body>
+
+<style type="text/css">
+    body{
+        background-color: #F1F1F3;
+        font-family: '微软雅黑';
+        overflow-x: hidden;
+    }
+    #meuem-div img{
+        position: relative;
+        margin-left:7%;
+    }
+    #top-div a{
+        font-size:12px;
+        color:black;
+        font-weight: 800;
+        margin-left:5px;
+    }
+    #top-div label{
+        color:#dddddd;
+    }
+    a{
+        text-decoration: none;
+    }
+    #top-div{
+        width: 100%;
+        overflow: hidden;
+        margin-bottom:8px;
+    }
+    #top-div-left-div{
+        position: relative;
+        /*border:1px solid red;*/
+        float: left;
+        margin-left:8%;
+    }
+    #top-div-right-div{
+        position: relative;
+        /*border: 1px solid blue;*/
+        float: right;
+        margin-right:8%;
+    }
+
+</style>
+
+<script type="text/javascript">
+    $("#main-center-div").load("myFarm.html");
+    $("#main-bottom-div").load("bottom.html");
+    $(function(){
+        $(".menum-item").click(function(){
+            var obj = $(this);
+            $(".menum-item").css({"border-bottom-color":"#1C4875","color":"white"});
+            obj.css({"color":"#FF8812","border-bottom-color":"#FF8812","border-bottom-style":"solid","border-bottom-width":"2px"});
+            if(obj.attr("id") == "goods-prefecture"){
+                $("#main-center-div").load("myFarm.html");
+            }else{
+                $("#main-center-div").load("myFarm.html");
+            }
+        });
+    })
+</script>
+</html>

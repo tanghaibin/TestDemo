@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>新疆兵团建设基地欢迎你</title>
+      	<script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
+    </head>
+    <body>
+	<div id="title-div">
+		<img src="image/首页.png"/>
+	</div>
+	
+	<div id="body-background">
+		<img src="image/图画.png"/>
+	</div>
+     <div id="login-div">
+		<div id="geren-type" class="user-type-div">个人账户</div>
+		<div id="comper-type" class="user-type-div">企业账户</div>
+
+		<div id="input-div">
+			<input type="text" id="username" placeHolder="用户名" class="input"/>
+			<input type="text" id="pswd" placeHolder="密码" class="input"/>
+			<div id="remrnber-div">
+				<input type="checkbox"/><label>记住用户名</label>  <a class="forget-pswd" href="#">忘记密码</a>
+			</div>
+
+			<div id="login-btn">立即登录</div>
+
+			<div id="login-div-bottom">
+				<label>没有帐号?</label>
+				<a href="#">免费注册</a>
+			</div>
+		</div>
+	 </div>
+    </body>
+
+	<style type="text/css">
+		body{
+			background-color:#3291C7;
+			font-family:'微软雅黑'
+		}
+		a{
+			text-decoration:none;
+		}
+		#title-div{
+			position:relative;
+			width:100%;
+			height:35%;
+			background-color:#1C4875;
+			margin-top:-9px;
+			margin-left:0px;
+		}
+		#title-div img{
+			position:relative;
+			margin-left:13%;
+		}
+		#body-background{
+			position:relative;
+			float:left;
+			left:20%;
+			margin-top:5%;
+		}
+		#body-background img{
+			width:100%;
+		}
+		#login-div{
+			position:relative;
+			width:23%;
+			height:400px;
+			float:right;
+			right:10%;
+			margin-top:5%;
+			background-color:white;
+		}
+		.user-type-div{
+			position:relative;
+			width:50%;
+			height:6%;
+			float:left;
+			margin-top:10%;
+			text-align:center;
+			cursor: pointer;
+		}
+		#geren-type{
+			background-color:#E0E0E0;
+		}
+		#comper-type{
+			background-color:#FF8812;
+		}
+		.input{
+			position:relative;
+			width:80%;
+			height:30px;
+			left:10%;
+			border-radius:6px;
+			border-color:#A6A6A6;
+			border-width:1px;
+			border-style:solid;
+			padding-top:6px;
+		
+		}
+		#username{
+			margin-top:13%;
+		}
+		#pswd{
+			margin-top:8%;
+		}
+		#remrnber-div{
+			
+			position:relative;
+			width:80%;
+			left:10%;
+			top:6px;
+		}
+		
+		#remrnber-div label{
+			font-size:12px
+		}
+		.forget-pswd{
+			text-decoration:none;
+			font-size:12px;
+			margin-left:25%;
+		}
+		#login-btn{
+			position:relative;
+			width:80%;
+			left:10%;
+			background-color:#3A84CF;
+			margin-top:8%;
+			height:34px;
+			text-align:center;
+			color:white;
+			padding-top:3%;
+			cursor: pointer;
+		}
+
+		#login-div-bottom{
+			position:relative;
+			text-align:center;
+			font-size:13px;
+			padding-top:5px;
+		}
+		input{
+			padding-left:5px;
+		}
+	</style>
+
+<script type="text/javascript">
+	$(function(){
+		$(".user-type-div").click(function(){
+			$(".user-type-div").css("background","#E0E0E0");
+			$(this).css("background","#FF8812");
+		});
+	})
+
+</script>
+</html>
