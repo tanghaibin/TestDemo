@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 demo</title>
+
+    <style type="text/css">
+        #a{
+            background: #eee;
+            padding: 30px;
+            border: 3px dotted #4474CB;
+            border-top-color:red;
+            border-bottom-color: green;
+            border-bottom-left-radius: 25px;
+        }
+        #b{
+            background: #eee;
+            border-radius: 10px;
+            width: 40px;
+            height: 10px;
+            padding: 18px;
+
+        }
+        #c{
+            -webkit-box-reflect:below 0 -webkit-linear-gradient(transparent,transparent 50%,rgba(255,255,255,.3));
+            font:bold 100px/1.231 georgia,sans-serif;
+            text-transform:uppercase;
+        }
+        p{
+            overflow:hidden;
+            width:100px;
+            text-overflow: ellipsis;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            float: left;
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            background: #eee;
+            transition:background-color .5s ease-in;
+        }
+        ul li:hover{
+            background-color: #54bb2c;
+        }
+       input:checked+div{
+           background: red;
+       }
+        div::selection{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">aaaaaaaaaa</div>
+
+    <div id="b">button</div>
+
+    <div id="c">ccccc</div>
+
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+
+    <ul class="test">
+        <li class="colorname">列表项一</li>
+        <li class="colorname">列表项一</li>
+        <li class="colorname">列表项一</li>
+        <li class="colorname">列表项一</li>
+    </ul>
+
+
+    <input type="checkbox" id="check"/>
+       <div style="width: 200px;height: 200px;border: 1px solid"></div>
+</body>
+</html>

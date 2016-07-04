@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>canvas demo</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+
+    <canvas id="canvas" width="600" height="600" style="border:1px solid blue"></canvas>
+
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");//得到画布
+        var pen = canvas.getContext("2d");
+
+
+        pen.moveTo(20,20);
+        pen.lineTo(20,150);
+        pen.lineTo(200,100);
+        //pen.lineTo();
+        pen.stroke();
+    </script>
+</body>
+</html>
