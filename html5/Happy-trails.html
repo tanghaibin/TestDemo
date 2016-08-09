@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>happy-trails</title>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="600" style="border: 1px solid"></canvas>
+
+    <script type="text/javascript">
+
+        function createCanopyPath(context){
+            context.beginPath();
+            context.moveTo(-25,-50);
+            context.lineTo(-10,-80);
+            context.lineTo(-20,-80);
+            context.lineTo(-5,-110);
+            context.lineTo(-15,-110);
+            context.lineTo(0,-140);
+            context.lineTo(15,-110);
+            context.lineTo(5,-110);
+            context.lineTo(20,-80);
+            context.lineTo(10,-80);
+            context.lineTo(25,-50);
+            context.closePath();
+
+        }
+        //绘制树
+         function drawTree(context){
+             //树叶
+             createCanopyPath(context);
+             context.strokeStyle = "#663300";
+             context.lineWidth = 4;
+             context.lineJoin = "round";
+             context.stroke();
+
+             context.fillStyle = "#339900";
+             context.fill();
+         }
+
+        /**
+         * 绘制封面
+         */
+        function drawtrails(context){
+            context.save();
+            context.translate(130,250);
+            drawTree(context);
+            context.restore();
+        }
+        var gravel = new Image();
+        gravel.src = "images/gravel.jpg";
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        gravel.onload = function(){
+            drawtrails(context );
+        }
+    </script>
+</body>
+</html>
