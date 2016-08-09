@@ -8,9 +8,9 @@
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
        <dubbo:application name="hello-consumer"></dubbo:application>
-
+       <!-- 注册中心-->
        <dubbo:registry protocol="zookeeper" address="zookeeper://192.168.170.128:2181" timeout="1000"></dubbo:registry>
-
+       <!--引用服务-->
        <dubbo:reference interface="top.tanghaibin.dubbo.facade.HelloService" id="helloService"></dubbo:reference>
 
 

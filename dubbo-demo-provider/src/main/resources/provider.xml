@@ -10,6 +10,7 @@
 
        <bean id="helloService" class="top.tanghaibin.dubbo.provider.HelloServiceImpl"></bean>
        <dubbo:application name="HelloService-provider"></dubbo:application>
+       <!-- 注册中心-->
        <dubbo:registry protocol="zookeeper" address="zookeeper://192.168.170.128:2181" timeout="3000"></dubbo:registry>
        <!-- 暴露服务-->
        <dubbo:service interface="top.tanghaibin.dubbo.facade.HelloService" ref="helloService" ></dubbo:service>
