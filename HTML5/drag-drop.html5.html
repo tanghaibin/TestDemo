@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>拖放demo</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     * 阻止元素的默认处理方式
+     * @param event
+     */
+    function allowDrop(event){
+        event.preventDefault();
+    }
+    /**
+     * 拖动元素触发该方法
+     * @param event
+     */
+    function drag(event){
+        event.dataTransfer.setData("img",event.target.id);//第一个参数可以随便填
+    }
+    /**
+     * 放置元素
+     * @param event
+     */
+    function drop(event){
+        event.preventDefault();
+        var data = event.dataTransfer.getData("img");
+        event.target.appendChild(document.getElementById(data));
+    }
+</script>
+
+
+<div id="div1" ondrop="drop(event)"  style="width:700px;height:300px;border: 1px solid blueviolet" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" style="width:700px;height:300px;border: 1px solid blueviolet" ondragover="allowDrop(event)"></div>
+<br />
+<label id="label" draggable="true" ondragstart="drag(event)">测试拖动</label>
+<img id="drag1"  src="https://www.baidu.com/img/bd_logo1.png" draggable="true" ondragstart="drag(event)" />
+</body>
+</html>

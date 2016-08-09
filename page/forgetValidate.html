@@ -2,44 +2,21 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>注册</title>
+    <title>手机注册</title>
     <script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
 </head>
 <body>
-
-    <div id="title-div">
-        <img src="image/regist2.png"/>
-    </div>
-
-    <div id="regist-process-div">
-        <div>
-            <img src="image/12.png"/>
-        </div>
-        <div id="regist-process-a-div">
-            <label>已有账号？<a href="#">立即登录</a></label>
-        </div>
-    </div>
-
-    <div id="content-div">
-        <div id="regist-div">
-
-        </div>
-        
-        <div id="right-img-div">
-            <img src="image/6.png"/>
-        </div>
-    </div>
-
-    <div id="bottom-div">
-        <div id="bottom-div-ul">
-            <ul>
-                <li><a href="#">生产基地</a> |</li>
-                <li><a href="#">合作伙伴</a> |</li>
-                <li><a href="#">联系客服</a> |</li>
-                <li><a href="#">关于我们</a></li>
-            </ul>
-        </div>
-    </div>
+            <div id="phone-div" class="input">
+                <label><span style="color: red">*</span>手机号</label><input type="text"/>
+            </div>
+            <div id="sms-div">
+                <label><span style="color: red">*</span>短信验证码</label><input type="text"/>
+                <input id="getCode-btn" type="button" value="获取短信验证码"/>
+            </div>
+            <div id="email-div" class="input">
+                <label><span style="color: red">*</span>邮箱</label><input type="text"/>
+            </div>
+            <div id="next-btn">下一步</div>
 </body>
 
 <style type="text/css">
@@ -89,43 +66,14 @@
     #regist-div{
         position: relative;
         width: 500px;
-        /*height:350px;*/
+        height:350px;
         border:1px solid #E0E0E0;
         left:10%;
         margin-top:1%;
         float: left;
-        margin-bottom: 10px;
     }
-    .user-type{
-        position: relative;
-        float: left;
-        width: 50%;
-        height: 25px;
-        text-align: center;
-        font-size: 13px;
-        padding-top: 4px;
-        cursor: pointer;
-        transition: background-color 0.5s ease-in;
-    }
-    #geren-user{
-        background-color: #FF8812;
-    }
-    #qiye-user{
-        background-color: #E0E0E0;
-    }
-    #phone-div{
-        position: relative;
-        margin-left: 8%;
-        margin-top: 18%;
-    }
-    #phone-div input{
-         border-radius: 7px;
-         border-color: #A0A0A0;
-         border-width: 1px;
-         width: 50%;
-         height: 35px;
-        margin-left: 10px;
-     }
+
+
     #sms-div input{
         border-radius: 7px;
         border-color: #A0A0A0;
@@ -175,7 +123,7 @@
         width: 100%;
         height: 220px;
         background-color: #E0E0E0;
-        margin-top:10px;
+        margin-top:30%;
     }
 
     #bottom-div-ul ul li{
@@ -193,17 +141,32 @@
         color:#878787;
         font-size:13px;
     }
-    #content-div{
-        position: relative;
-        width: 100%;
 
-        /*height:500px;*/
-        overflow-y: hidden;
-    }
 </style>
 
 <script type="text/javascript">
-    $("#regist-div").load("validate.html");
+    $(function(){
+        $("#getCode-btn").click(function(){
+            $("#getCode-btn").attr("disabled","true");
+            $("#getCode-btn").val("60s");
+            setInterval(setNumber , 1000);
+        });
 
+        $("#next-btn").click(function(){
+            $("#regist-div").load("forgetUpdate.html");
+            $("#regist-process-div img").attr("src","image/15.png");
+        })
+    });
+
+    function setNumber(){
+        var num = $("#getCode-btn").val().split("s")[0];
+        if(num > 0){
+            $("#getCode-btn").val(num - 1 + "s");
+        }else{
+            clearInterval(setNumber);
+            $("#getCode-btn").val("获取短信验证码");
+            $("#getCode-btn").removeAttr("disabled");
+        }
+    }
 </script>
 </html>
