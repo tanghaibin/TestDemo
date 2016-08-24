@@ -1,13 +1,12 @@
 package top.tanghaibin.proxy.main;
 
+import org.junit.Test;
 import top.tanghaibin.proxy.serviceImpl.UserServiceImpl;
 import top.tanhgaibin.proxy.service.UserService;
 import top.top.tanghaibin.proxy.MyHandler;
 
 import java.lang.reflect.Proxy;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by tangh on 2016/5/4.
@@ -64,4 +63,30 @@ public class Main {
         return list;
     }
 
+    @Test
+    public void test(){
+        Integer [] array = {80,20,58,90,10};
+//        Arrays.sort(array);
+//        System.out.println(Arrays.asList(array));
+
+        Arrays.sort(array,new CustomComparator());
+        System.out.println(Arrays.asList(array));
+    }
+
+    class CustomComparator implements Comparator {
+
+        @Override
+        public int compare(Object o1, Object o2) {
+            if(o1 instanceof Integer && o2 instanceof Integer){
+                Integer a = (Integer) o1;
+                Integer b = (Integer) o2;
+                if(a>b){
+                    return -1;
+                }else{
+                    return 1;
+                }
+            }
+            return 0;
+        }
+    }
 }
