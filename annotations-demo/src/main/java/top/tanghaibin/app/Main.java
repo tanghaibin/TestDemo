@@ -7,6 +7,7 @@ import top.tanghaibin.model.Employee;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -27,7 +28,7 @@ public class Main {
             Class<Employee> employeeClass = (Class<Employee>) employee.getClass();
             Field[] fieldses = employeeClass.getDeclaredFields();
 
-            Set<Object> set = new HashSet<>();
+            Set<Object> set = new HashSet<Object>();
             set.add(new Department("研发部","25"));
             for(Field field:fieldses){
                 if(field.isAnnotationPresent(AutoWaried.class)){
