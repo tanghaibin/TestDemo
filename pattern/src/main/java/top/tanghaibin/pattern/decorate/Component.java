@@ -2,7 +2,7 @@ package top.tanghaibin.pattern.decorate;
 
 /**
  * Created by 唐海斌 on 2016/9/7.
- *
+ *抽象构件
  *装饰模式
  *   四部分组成
  *      1） 抽象构件角色（Component）：定义一个抽象接口，以规范准备接收附加责任的对象。

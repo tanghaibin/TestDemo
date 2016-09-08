@@ -2,6 +2,7 @@ package top.tanghaibin.pattern.decorate;
 
 /**
  * Created by 唐海斌 on 2016/9/7.
+ * 装饰角色
  */
 public class Decorator implements Component {
 
