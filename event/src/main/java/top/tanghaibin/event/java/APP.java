@@ -1,4 +1,4 @@
-package top.tanghaibin.event;
+package top.tanghaibin.event.java;
 
 /**
  * Created by tanghaibin on 2016/9/26.

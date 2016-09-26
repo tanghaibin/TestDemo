@@ -1,4 +1,4 @@
-package top.tanghaibin.event;
+package top.tanghaibin.event.java;
 
 import java.util.HashSet;
 import java.util.Iterator;
