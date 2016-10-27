@@ -29,4 +29,8 @@ public class MD5Sdk {
         }
         return s;
     }
+
+    public static  void main(String [] args) {
+
+    }
 }
