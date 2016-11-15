@@ -16,6 +16,15 @@ public class IndexController {
     }
     @RequestMapping("content")
     public String getContent() {
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "content";
+    }
+    @RequestMapping("image")
+    public String image() {
+        return "image";
     }
 }
