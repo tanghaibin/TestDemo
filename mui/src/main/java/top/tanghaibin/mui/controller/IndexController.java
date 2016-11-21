@@ -2,8 +2,10 @@ package top.tanghaibin.mui.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by tangh on 2016/11/12.
@@ -53,5 +55,11 @@ private static int count = 0;
     @RequestMapping("upload")
     public void upload(String base64) {
         System.out.println(base64);
+    }
+
+
+    @RequestMapping("httpClient")
+    public void httpClient(MultipartFile file, String name, String lick) throws UnsupportedEncodingException {
+        System.out.println(lick);
     }
 }
