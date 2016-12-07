@@ -20,26 +20,8 @@ private static int count = 0;
     }
     @RequestMapping("content")
     public String getContent(HttpServletRequest httpServletRequest) {
-        if(count < 2) {
-            httpServletRequest.setAttribute("html", "<ul>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "    <li>one</li>\n" +
-                    "</ul>");
-        }else if(count == 4){
-            count = 0;
-        }
-        ++count;
+        String contextPath = httpServletRequest.getContextPath() + "/order/detal";
+        String basePath = httpServletRequest.getScheme() + "://"+ httpServletRequest.getServerName() + ":" + httpServletRequest.getServerPort()+ contextPath;
         return "content";
     }
     @RequestMapping("image")
