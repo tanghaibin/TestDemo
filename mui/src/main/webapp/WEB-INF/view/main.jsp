@@ -31,8 +31,7 @@
 </body>
 <script type="text/javascript">
 
-    var isFirst = true;
-
+    var isNotMoreData = false;
     $(function () {
         mui.init({
             pullRefresh: {
@@ -66,6 +65,11 @@
             $.ajax({
                 url: '/content',
                 success: function (data) {
+                    if(data.trim() == '') {
+                        isNotMoreData = true;
+                    }else {
+                        isNotMoreData = false;
+                    }
                     table.html(data);
                     if(isFirst) {
                         optionEmptyDiv();
@@ -77,27 +81,31 @@
                 }
             });
             mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-        }, 1000000);
+        }, 1500);
     }
 
-var count = 0;
     /**
      * 上拉加载具体业务实现
      */
     function pullupRefresh() {
         setTimeout(function () {
-            mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+            mui('#pullrefresh').pullRefresh().endPullupToRefresh(isNotMoreData); //参数为true代表没有更多数据了。
             var table = $("ul[class*='mui-table-view']");
             $.ajax({
                 url: '/content',
                 success: function (data) {
+                    console.log(data.trim() == '');
+                    if(data.trim() == '') {
+                        isNotMoreData = true;
+                        return;
+                    }
                     table.append(data);
                 },
                 error: function (e) {
                     alert(e);
                 }
             })
-        }, 1500);
+        });
     }
     if (mui.os.plus) {
         mui.plusReady(function () {

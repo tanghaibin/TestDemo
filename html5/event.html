@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+    <div style="width:200px;height:200px;background:red;" id="div1" onclick="test()">
+        <div style="width:200px;height:200px;background:blue" id="div2" onclick="test2()"></div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    function test() {
+        console.log("red div");
+    }
+
+    function test2() {
+        console.log("blue dev");
+event.stopPropagation();
+    }
+</script>
+</html>
