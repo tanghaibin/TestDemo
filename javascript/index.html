@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript 高级属性</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function writeBR() {
+            document.write("<br/>");
+        }
+        /**
+         *  in 用来判断对象属性是否存在 对数组也适用; 判断的是key 而不是value
+         */
+        var constants = {
+            date : 'yyyyMMss',
+            msg : 'server error'
+        };
+        document.write('msg' in constants); //return true
+        writeBR();
+        var names = ['xiaoming', "xiaohong"];
+        document.write(0 in names); //return true
+        writeBR();
+        document.write("before delete : " + JSON.stringify(constants));
+        writeBR();
+        /**
+         * 使用delete删除对象的属性和数组的属性
+         */
+        delete constants.msg;
+        delete names[0];
+        document.write("after delete : " + JSON.stringify(constants));
+        /**
+         * 使用Number转数值（String与其执行步骤相反 先toString 后 valueOf）：
+         *  ①先调用valueOf方法  如果返回原始数据类型的值 则使用Number来进行转换 不在进行下一步
+         *  ②调用toString方法 如果返回原始数据类型的值 则调用Number来进行转换 不再进行下一步
+         *  ③如果toString 方法返回复合类型的值 则报错
+         * 从例子可以看出valueOf和toString方法我们可以将其重写 来实现某些功能
+         * @type {{user: {name: string, age: number}, valueOf: obj.valueOf, toString: obj.toString}}
+         */
+        var obj = {
+            user: {
+              "name" : "xiaoming",
+                "age" : 21
+            },
+            valueOf: function() {
+                return this.user;
+            },
+            toString: function() {
+                return 2;
+            }
+        };
+        writeBR();
+        document.write(Number(obj));
+        writeBR();
+        document.write(Object.keys(obj));
+
+        /**
+         * call 方法可以指定函数执行时this所在作用域
+         * @type {number}
+         */
+        var age = 9;
+        var user = {"age" : 23};
+        function writeAge() {
+            writeBR();
+            document.write(this.age);
+        }
+        writeAge.call(user);//write 23
+        writeAge();//write 9
+        /**
+         * 利用apply 结合Math.max取出数组最大的元素值
+         * @type {[*]}
+         */
+        var array = [12,2,43,5];
+        writeBR();
+        document.write(Math.max.apply(null, array));
+    </script>
+</body>
+</html>

@@ -77,7 +77,7 @@
                 }
             });
             mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-        }, 1500);
+        }, 1000000);
     }
 
 var count = 0;

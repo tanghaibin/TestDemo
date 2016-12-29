@@ -16,6 +16,20 @@ public class IndexController {
     }
     @RequestMapping("content")
     public String getContent() {
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "content";
+    }
+
+    @RequestMapping("uploadPage")
+    public String toUploadPage() {
+        return "upload";
+    }
+    @RequestMapping("upload")
+    public void upload(String base64) {
+        System.out.println(base64);
     }
 }
