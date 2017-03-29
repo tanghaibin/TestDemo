@@ -16,13 +16,18 @@ public class RegexDemo {
     }
 
     public static void main(String [] args){
-        String phone = "18682668023rf*";
-        test(phone,"^[\\d]{11}.[\\D]{2}.*");
-        String url = "www.baidu.com";
-        test(url,"^[w]{3}.*[.]{1}.*[a-z]{5}.*[.]{1}.*[a-z]{3}");
-        String name = "tanghaibin";
-        test(name, "^[a-zA-Z0-9]{1,10}");
-        String email = "tanghaibinhaohan@163.net";
-        test(email, "^[a-zA-Z0-9]+.*[@]{1}.*[\\D\\d]{5}.*[com|cn|net]$");
+//        String phone = "18682668023rf*";
+//        test(phone,"^[\\d]{11}.[\\D]{2}.*");
+//        String url = "www.baidu.com";
+//        test(url,"^[w]{3}.*[.]{1}.*[a-z]{5}.*[.]{1}.*[a-z]{3}");
+//        String name = "tanghaibin";
+//        test(name, "^[a-zA-Z0-9]{1,10}");
+//        String email = "tanghaibinhaohan@163.net";
+//        test(email, "^[a-zA-Z0-9]+.*[@]{1}.*[\\D\\d]{5}.*[com|cn|net]$");
+
+//        String testUrl = "my-ui";
+//        test(testUrl, "^[\\-]+");"^([0-9a-zA-Z]*|[!@#$%^&*~]){6,16}$"
+        String s4 = "1d31111111";
+        test(s4, "^([\\w]){6,16}|([\\w*!@#$%^&*~]){6,16}|([!@#$%^&*~]){6,16}$");
     }
 }

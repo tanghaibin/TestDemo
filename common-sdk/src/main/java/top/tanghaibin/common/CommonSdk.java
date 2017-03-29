@@ -260,4 +260,13 @@ public class CommonSdk {
         }
         return sb.toString();
     }
+
+    public static void main(String [] args) {
+        Set<String> set = new TreeSet<String>();
+        set.add("ebc");
+        set.add("bae");
+        set.add("fgea");
+        set.add("aac");
+        System.out.println(set);
+    }
 }

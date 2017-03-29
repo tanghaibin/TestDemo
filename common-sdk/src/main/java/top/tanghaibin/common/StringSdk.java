@@ -10,6 +10,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.NumberFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -216,4 +218,16 @@ public class StringSdk {
         }
         return sb.toString();
     }
+
+    public static void main(String [] args) {
+        System.out.println(getRandomStr());
+        Long orderId = 336705614745047040l;
+        System.out.println(String.valueOf(orderId));
+
+        String url = "https://www.baidu.com";
+        boolean result = url.matches("http:.*");
+        String aa = url.replaceAll("http.*", "aa");
+        System.out.println(aa);
+    }
+
 }

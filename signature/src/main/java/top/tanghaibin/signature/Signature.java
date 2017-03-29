@@ -31,6 +31,7 @@ public class Signature {
         String signature = DigestUtils.md5Hex((appKey + appSecret + tempstap).getBytes());
         String result = api(id, name, tempstap, signature);
         System.out.println(result);
+
     }
 
 }

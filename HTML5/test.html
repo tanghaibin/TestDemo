@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" id="btn" value="test unbind event"/>
+</body>
+
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var fn = function(e) {
+        alert(e);
+        btn.removeEventListener("click", fn);
+
+    };
+    btn.addEventListener("click", fn);
+
+
+</script>
+</html>
